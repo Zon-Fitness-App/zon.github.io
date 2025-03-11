@@ -14,56 +14,123 @@
             margin: 0;
             padding: 0;
         }
+
         header {
             padding: 20px;
         }
+
         .logo {
-            width: 150px;
+            width: 120px;
         }
-        .images-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px; /* Espace entre les images */
-        }
-        .images-container img {
-            width: 45%; /* Ajuste la taille selon tes préférences */
-            max-width: 300px; /* Évite que les images deviennent trop grandes */
-            height: auto;
-        }
+
         .hero {
-            padding: 50px 20px;
+            padding: 60px 20px;
         }
+
+        h1 {
+            font-size: 2.5em;
+            font-weight: bold;
+        }
+
         .download-buttons {
-            margin-top: 20px;
+            margin-top: 30px;
         }
-        .btn {
-            display: inline-block;
-            margin: 10px;
-            padding: 15px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 18px;
+
+        .download-buttons a img {
+            width: 180px;
+            transition: transform 0.3s ease-in-out;
         }
-        .appstore {
-            background-color: #4285F4;
-            color: white;
+
+        .download-buttons a img:hover {
+            transform: scale(1.1);
         }
-        .googleplay {
-            background-color: #4285F4;
-            color: white;
-        }
-        .features, .custom-training {
-            padding: 40px 20px;
+
+        .features {
+            padding: 50px 20px;
             max-width: 800px;
             margin: 0 auto;
+            text-align: center;
         }
+
+        .features h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .features p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
         ul {
             list-style-type: none;
             padding: 0;
         }
+
         ul li {
-            font-size: 18px;
-            padding: 5px 0;
+            font-size: 1.1em;
+            padding: 8px 0;
+        }
+
+        .custom-training {
+            padding: 50px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .custom-training h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .custom-training p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .images-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .images-container img {
+            width: 45%;
+            max-width: 350px;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .images-container img:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            margin-top: 50px;
+            padding: 20px 0;
+            font-size: 1.2em;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .features, .custom-training {
+                padding: 30px 15px;
+            }
+
+            .images-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .images-container img {
+                width: 80%;
+            }
         }
     </style>
 </head>
@@ -71,7 +138,7 @@
     <header>
         <img src="images/logo.png" alt="Logo de l'application Fitness" class="logo">
     </header>
-    
+
     <section class="hero">
         <h1>DOWNLOAD <br> ZON APP</h1>
         <div class="download-buttons">
@@ -80,7 +147,7 @@
             </a>
         </div>
     </section>
-    
+
     <section class="features">
         <h2>ZON</h2>
         <p>The essential tool that supports you before, during, and after your workout!</p>
@@ -90,7 +157,7 @@
             <li>🏋️‍♂️ Train with personalized programs</li>
             <li>🔥 Find a coach that suits you</li>
         </ul>
-</section>
+    </section>
 
     <section class="custom-training">
         <h2>Configure your own fitness app</h2>
@@ -107,6 +174,5 @@
             <a href="#"><img src="images/appstore.png" alt="Download the App"></a>
         </div>
     </footer>
-
 </body>
 </html>
