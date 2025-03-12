@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="images/favicon.png">
     <style>
+        /* Règles générales */
         body {
             background-color: black;
             color: white;
@@ -16,23 +17,68 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            scroll-behavior: smooth;
         }
 
+        section {
+            padding: 60px 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Header et navigation */
         header {
             padding: 20px;
+            position: sticky;
+            top: 0;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .logo {
             width: 120px;
         }
 
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #333;
+        }
+
+        /* Section Hero */
         .hero {
-            padding: 60px 20px;
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to bottom, #000, #111);
         }
 
         h1 {
             font-size: 2.5em;
             font-weight: bold;
+            margin-bottom: 30px;
         }
 
         .download-buttons {
@@ -52,24 +98,91 @@
             transform: scale(1.1);
         }
 
-        .features h2 {
+        /* Section des cartes (fonctionnalités et témoignages) */
+        .cards-section {
+            padding: 50px 20px;
+            background-color: #111;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cards-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.3), transparent);
+        }
+
+        .cards-section h2 {
             font-size: 2em;
-            margin-bottom: 10px;
+            margin-bottom: 30px;
+            position: relative;
+            display: inline-block;
         }
 
-        .features p {
-            font-size: 1.2em;
-            margin-bottom: 20px;
+        .cards-section h2::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background-color: #0066cc;
         }
 
-        ul {
-            list-style-type: none;
-            padding: 0;
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        ul li {
+        .card {
+            background-color: #222;
+            border-radius: 10px;
+            padding: 20px;
+            width: 300px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .feature-card {
+            text-align: center;
+        }
+
+        .feature-card p {
             font-size: 1.1em;
-            padding: 8px 0;
+        }
+
+        .feature-icon {
+            font-size: 2em;
+            margin-bottom: 15px;
+            color: #0066cc;
+        }
+
+        .testimonial-card {
+            text-align: left;
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-name {
+            font-weight: bold;
+            text-align: right;
         }
 
         /* Section des captures d'écran */
@@ -91,7 +204,20 @@
         .app-screenshots h2 {
             font-size: 1.8em;
             font-weight: bold;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .app-screenshots h2::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 3px;
+            background-color: #0066cc;
         }
 
         .screenshot-container {
@@ -113,63 +239,32 @@
             transform: scale(1.05);
         }
 
-        /* Section témoignages */
-        .testimonials {
-            padding: 50px 20px;
-            background-color: #111;
-            margin-top: 40px;
-        }
-
-        .testimonials h2 {
-            font-size: 2em;
-            margin-bottom: 30px;
-        }
-
-        .testimonial-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .testimonial {
-            background-color: #222;
-            border-radius: 10px;
-            padding: 20px;
-            width: 300px;
-            text-align: left;
-        }
-
-        .features {
-            background-color: #222;
-            border-radius: 10px;
-            padding: 20px;
-            width: 300px;
-            text-align: center;
-        }
-
-        .testimonial p {
-            font-style: italic;
-            margin-bottom: 15px;
-        }
-
-        .testimonial-name {
-            font-weight: bold;
-            text-align: right;
-        }
-
         /* Section contact */
         .contact {
             padding: 60px 20px;
             max-width: 600px;
             margin: 0 auto;
+            background-color: #111;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
 
         .contact h2 {
             font-size: 2em;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .contact h2::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 3px;
+            background-color: #0066cc;
         }
 
         .contact-form {
@@ -185,6 +280,13 @@
             border: none;
             background-color: #333;
             color: white;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            background-color: #444;
+            outline: none;
         }
 
         .contact-form textarea {
@@ -200,26 +302,38 @@
             border-radius: 5px;
             font-weight: bold;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s ease;
         }
 
         .contact-form button:hover {
             background-color: #0055aa;
         }
 
+        /* Footer */
         footer {
             margin-top: 50px;
-            padding: 20px 0;
+            padding: 30px 0;
             font-size: 1.2em;
             text-align: center;
-            background-color: black;
+            background-color: #111;
+            position: relative;
+        }
+
+        footer::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.3), transparent);
         }
 
         .footer-content {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 10px;
+            gap: 15px;
         }
 
         .footer-logo {
@@ -236,6 +350,34 @@
             color: white;
             font-size: 1.5em;
             text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #0066cc;
+        }
+
+        /* Bouton retour en haut */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #0066cc;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1000;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
         }
 
         /* Responsive */
@@ -248,6 +390,10 @@
             .app-screenshots {
                 width: 90%;
             }
+            
+            nav ul {
+                gap: 10px;
+            }
         }
 
         @media (max-width: 768px) {
@@ -258,20 +404,45 @@
             .screenshot-container img {
                 width: 30%;
             }
+            
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
         }
 
         @media (max-width: 480px) {
             .screenshot-container img {
                 width: 45%;
             }
+            
+            .card {
+                width: 100%;
+                max-width: 300px;
+            }
         }
     </style>
-    <!-- Font Awesome pour les icônes socials -->
+    <!-- Font Awesome pour les icônes -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <img src="images/logo.png" alt="Logo de l'application ZON" class="logo">
+    <header id="top">
+        <div class="nav-container">
+            <img src="images/logo.png" alt="Logo de l'application ZON" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#screenshots">Screenshots</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <section class="hero">
@@ -280,28 +451,35 @@
             <a href="https://apps.apple.com" target="_blank" aria-label="Télécharger sur App Store">
                 <img src="images/appstore.png" alt="Télécharger sur App Store">
             </a>
+            <a href="https://play.google.com" target="_blank" aria-label="Télécharger sur Google Play">
+                <img src="images/googleplay.png" alt="Télécharger sur Google Play">
+            </a>
         </div>
     </section>
 
-    <section class="testimonials">
+    <section id="features" class="cards-section">
         <h2>The essential tool that supports you before, during, and after your workout!</h2>
-        <div class="testimonial-container">
-            <div class="features">
+        <div class="cards-container">
+            <div class="card feature-card">
+                <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
                 <p>📊 Track your progress</p>
             </div>
-            <div class="features">
+            <div class="card feature-card">
+                <div class="feature-icon"><i class="fas fa-calendar-check"></i></div>
                 <p>📅 Book your group classes</p>
             </div>
-            <div class="features">
+            <div class="card feature-card">
+                <div class="feature-icon"><i class="fas fa-dumbbell"></i></div>
                 <p>🏋️‍♂️ Train with personalized programs</p>
             </div>
-            <div class="features">
+            <div class="card feature-card">
+                <div class="feature-icon"><i class="fas fa-fire"></i></div>
                 <p>🔥 Find a coach that suits you</p>
             </div>
         </div>
     </section>
 
-    <section class="screenshots-wrapper">
+    <section id="screenshots" class="screenshots-wrapper">
         <!-- Dark Mode Screenshots -->
         <div class="app-screenshots">
             <h2>Dark Mode</h2>
@@ -321,7 +499,7 @@
             <h2>Light Mode</h2>
             <div class="screenshot-container">
                 <img src="images/lightmode/light1.PNG" alt="Light Mode 1" loading="lazy">
-                <img src="images/lightmode/light2.PNG" alt="Light Mode 2" loading="lazy">
+                <img src="images/lightmode/light2.PNG" alt="Light Mode 2">
                 <img src="images/lightmode/light3.PNG" alt="Light Mode 3" loading="lazy">
                 <img src="images/lightmode/light4.PNG" alt="Light Mode 4" loading="lazy">
                 <img src="images/lightmode/light5.PNG" alt="Light Mode 5" loading="lazy">
@@ -331,27 +509,27 @@
         </div>
     </section>
 
-    <!-- Nouvelle section témoignages -->
-    <section class="testimonials">
+    <!-- Section témoignages -->
+    <section id="testimonials" class="cards-section">
         <h2>What our users say</h2>
-        <div class="testimonial-container">
-            <div class="testimonial">
+        <div class="cards-container">
+            <div class="card testimonial-card">
                 <p>"The ZON App has completely transformed my workout routine. I can easily track my progress, and the personalized programs are exactly what I needed!"</p>
                 <div class="testimonial-name">Sophie L.</div>
             </div>
-            <div class="testimonial">
+            <div class="card testimonial-card">
                 <p>"Booking group classes is super convenient. No need to call my gym anymore; it's all done in just a few clicks!"</p>
                 <div class="testimonial-name">Thomas M.</div>
             </div>
-            <div class="testimonial">
+            <div class="card testimonial-card">
                 <p>"Finding a coach who's right for me through the app has made all the difference. My sessions are more effective, and I'm reaching my goals faster."</p>
                 <div class="testimonial-name">Julie D.</div>
             </div>
         </div>
     </section>
 
-    <!-- Nouvelle section contact -->
-    <section class="contact">
+    <!-- Section contact -->
+    <section id="contact" class="contact">
         <h2>Contact us</h2>
         <form class="contact-form" action="submit_form.php" method="post">
             <input type="text" name="name" placeholder="Your name" required aria-label="Your name">
@@ -372,5 +550,34 @@
             </div>
         </div>
     </footer>
+
+    <a href="#top" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script>
+        // Script pour afficher/masquer le bouton "retour en haut"
+        window.addEventListener('scroll', function() {
+            const backToTopBtn = document.getElementById('backToTop');
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        });
+        
+        // Défilement fluide pour les liens d'ancrage
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId !== '#') {
+                    document.querySelector(targetId).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
