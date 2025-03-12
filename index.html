@@ -27,21 +27,20 @@
 
         /* Header et navigation */
         header {
-            padding: 10px 20px; /* Reduce vertical padding while keeping horizontal padding */
+            padding: 10px; /* Reduced from 20px */
             position: sticky;
             top: 0;
             background-color: rgba(0, 0, 0, 0.9);
             z-index: 1000;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-            height: auto; /* Let content determine height */
-            min-height: unset; /* Remove any minimum height if it exists */
-            line-height: 1; /* Reduce line height if that's contributing to the height */
         }
 
         .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
             margin: 0 auto;
-            height: auto;
-            padding: 0;
         }
 
         .logo {
