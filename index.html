@@ -55,6 +55,18 @@
             padding: 0; /* Added to remove default padding */
         }
 
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .checkbox-container input[type="checkbox"] {
+            width: auto;
+            height: auto;
+            margin: 0;
+        }
+
         nav a {
             color: white;
             text-decoration: none;
@@ -70,12 +82,18 @@
 
         /* Section Hero */
         .hero {
-            min-height: 10vh;
+            min-height: 30vh; /* Adjust as needed */
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             background: linear-gradient(to bottom, #000, #111);
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            max-width: 600px;
         }
 
         h1 {
@@ -453,11 +471,13 @@
     </header>
 
     <section class="hero">
-        <h1>DOWNLOAD <br> NOW</h1>
+        <h1>COMING SOON</h1>
+        <p>Be among the first to experience the ZON App</p>
         <div class="download-buttons">
-            <a href="https://apps.apple.com" target="_blank" aria-label="Télécharger sur App Store">
+            <!-- Remove or comment out the App Store link -->
+            <!-- <a href="https://apps.apple.com" target="_blank" aria-label="Télécharger sur App Store">
                 <img src="images/appstore.png" alt="Télécharger sur App Store">
-            </a>
+            </a> -->
         </div>
     </section>
 
@@ -532,15 +552,20 @@
         </div>
     </section>
 
-    <!-- Section contact -->
+    <!-- Section pré-inscription -->
     <section id="contact" class="contact">
-        <h2>Contact us</h2>
-        <form class="contact-form" action="submit_form.php" method="post">
+        <h2>Pre-register Now</h2>
+        <p>Leave your email to be notified when ZON App is released!</p>
+        <form class="contact-form" action="submit_preregister.php" method="post">
             <input type="text" name="name" placeholder="Your name" required aria-label="Your name">
             <input type="email" name="email" placeholder="Your email" required aria-label="Your email">
-            <textarea name="message" placeholder="Your message" required aria-label="Your message"></textarea>
-            <button type="submit">Send</button>
+            <div class="checkbox-container" style="text-align: left; margin: 10px 0;">
+                <input type="checkbox" id="newsletter" name="newsletter" checked>
+                <label for="newsletter">I want to receive updates about ZON App</label>
+            </div>
+            <button type="submit">Pre-register</button>
         </form>
+        <p style="margin-top: 20px; font-size: 0.9em;">We respect your privacy and will never share your email.</p>
     </section>
 
     <footer>
