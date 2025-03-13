@@ -746,6 +746,7 @@
                 }
             });
         });
+
         // Script pour le carrousel
         document.addEventListener('DOMContentLoaded', function() {
             const track = document.getElementById('screenshotCarousel');
@@ -755,14 +756,6 @@
             const indicatorsContainer = document.getElementById('carouselIndicators');
             
             let currentIndex = 0;
-            const slideWidth = slides[0].getBoundingClientRect().width;
-            
-            // Positionner les slides côte à côte
-            function setSlidePosition(slide, index) {
-                slide.style.left = slideWidth * index + 'px';
-            }
-            
-            slides.forEach(setSlidePosition);
             
             // Fonction pour déplacer le carrousel
             function moveToSlide(targetIndex) {
@@ -772,6 +765,8 @@
                     targetIndex = 0;
                 }
                 
+                // Utiliser translateX pour déplacer le carrousel
+                const slideWidth = slides[0].getBoundingClientRect().width;
                 track.style.transform = 'translateX(-' + (slideWidth * targetIndex) + 'px)';
                 updateIndicators(targetIndex);
                 currentIndex = targetIndex;
@@ -811,7 +806,7 @@
                 moveToSlide(currentIndex - 1);
             });
             
-            // Défilement automatique (optionnel)
+            // Défilement automatique
             let autoplay = setInterval(() => {
                 moveToSlide(currentIndex + 1);
             }, 5000);
