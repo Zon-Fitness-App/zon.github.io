@@ -606,35 +606,71 @@
         </div>
     </section>
 
-    <section id="screenshots" class="screenshots-wrapper">
-        <!-- Dark Mode Screenshots -->
-        <div class="app-screenshots">
-            <h2>Dark Mode</h2>
-            <div class="screenshot-container">
-                <img src="images/darkmode/dark1.PNG" alt="Dark Mode 1" loading="lazy">
-                <img src="images/darkmode/dark2.PNG" alt="Dark Mode 2" loading="lazy">
-                <img src="images/darkmode/dark3.PNG" alt="Dark Mode 3" loading="lazy">
-                <img src="images/darkmode/dark4.PNG" alt="Dark Mode 4" loading="lazy">
-                <img src="images/darkmode/dark5.PNG" alt="Dark Mode 5" loading="lazy">
-                <img src="images/darkmode/dark6.PNG" alt="Dark Mode 6" loading="lazy">
-                <img src="images/darkmode/dark7.PNG" alt="Dark Mode 7" loading="lazy">
+    <!-- Section captures d'écran modifiée avec carrousel -->
+<section id="screenshots" class="screenshots-wrapper">
+    <h2>Notre application en images</h2>
+    
+    <div class="carousel-container">
+        <div class="carousel-track" id="screenshotCarousel">
+            <!-- Images du mode sombre -->
+            <div class="carousel-slide">
+                <img src="images/darkmode/dark1.PNG" alt="Mode sombre - Écran 1" loading="lazy">
+            </div>
+            <div class="carousel-slide">
+                <img src="images/darkmode/dark2.PNG" alt="Mode sombre - Écran 2" loading="lazy">
+            </div>
+            <div class="carousel-slide">
+                <img src="images/darkmode/dark3.PNG" alt="Mode sombre - Écran 3" loading="lazy">
+            </div>
+            <div class="carousel-slide">
+                <img src="images/darkmode/dark4.PNG" alt="Mode sombre - Écran 4" loading="lazy">
+            </div>
+            <div class="carousel-slide">
+                <img src="images/darkmode/dark5.PNG" alt="Mode sombre - Écran 5" loading="lazy">
+            </div>
+            <div class="carousel-slide">
+                <img src="images/darkmode/dark6.PNG" alt="Mode sombre - Écran 6" loading="lazy">
+            </div>
+            <div class="carousel-slide">
+                <img src="images/darkmode/dark7.PNG" alt="Mode sombre - Écran 7" loading="lazy">
+            </div>
+            
+            <!-- Images du mode clair -->
+            <div class="carousel-slide">
+                <img src="images/lightmode/light1.PNG" alt="Mode clair - Écran 1" loading="lazy">
+            </div>
+            <div class="carousel-slide">
+                <img src="images/lightmode/light2.PNG" alt="Mode clair - Écran 2" loading="lazy">
+            </div>
+            <div class="carousel-slide">
+                <img src="images/lightmode/light3.PNG" alt="Mode clair - Écran 3" loading="lazy">
+            </div>
+            <div class="carousel-slide">
+                <img src="images/lightmode/light4.PNG" alt="Mode clair - Écran 4" loading="lazy">
+            </div>
+            <div class="carousel-slide">
+                <img src="images/lightmode/light5.PNG" alt="Mode clair - Écran 5" loading="lazy">
+            </div>
+            <div class="carousel-slide">
+                <img src="images/lightmode/light6.PNG" alt="Mode clair - Écran 6" loading="lazy">
+            </div>
+            <div class="carousel-slide">
+                <img src="images/lightmode/light7.PNG" alt="Mode clair - Écran 7" loading="lazy">
             </div>
         </div>
-
-        <!-- Light Mode Screenshots -->
-        <div class="app-screenshots">
-            <h2>Light Mode</h2>
-            <div class="screenshot-container">
-                <img src="images/lightmode/light1.PNG" alt="Light Mode 1" loading="lazy">
-                <img src="images/lightmode/light2.PNG" alt="Light Mode 2">
-                <img src="images/lightmode/light3.PNG" alt="Light Mode 3" loading="lazy">
-                <img src="images/lightmode/light4.PNG" alt="Light Mode 4" loading="lazy">
-                <img src="images/lightmode/light5.PNG" alt="Light Mode 5" loading="lazy">
-                <img src="images/lightmode/light6.PNG" alt="Light Mode 6" loading="lazy">
-                <img src="images/lightmode/light7.PNG" alt="Light Mode 7" loading="lazy">
-            </div>
-        </div>
-    </section>
+        
+        <!-- Contrôles du carrousel -->
+        <button class="carousel-control prev" id="prevBtn" aria-label="Image précédente">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="carousel-control next" id="nextBtn" aria-label="Image suivante">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        
+        <!-- Indicateurs du carrousel -->
+        <div class="carousel-indicators" id="carouselIndicators"></div>
+    </div>
+</section>
 
     <!-- Section témoignages -->
     <section id="testimonials" class="cards-section">
