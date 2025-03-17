@@ -25,7 +25,6 @@
         <ul>
         <li><a href="#testimonials">Testimonials</a></li>
         <li><a href="#preregister">Pre-Register</a></li>
-        <button id="toggleTheme">🌞 Mode clair</button>
         </ul>
         </nav>
         </div>
@@ -149,29 +148,6 @@
     </a>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const themeToggle = document.getElementById('toggleTheme');
-            const body = document.body;
-
-            // Vérifie si un mode est déjà stocké dans le localStorage
-            if (localStorage.getItem('theme') === 'light') {
-                body.classList.add('light-mode');
-                themeToggle.textContent = '🌙 Mode sombre';
-            }
-
-            themeToggle.addEventListener('click', function() {
-                if (body.classList.contains('light-mode')) {
-                    body.classList.remove('light-mode');
-                    localStorage.setItem('theme', 'dark');
-                    themeToggle.textContent = '🌞 Mode clair';
-                } else {
-                    body.classList.add('light-mode');
-                    localStorage.setItem('theme', 'light');
-                    themeToggle.textContent = '🌙 Mode sombre';
-                }
-            });
-        });
-
         // Script pour afficher/masquer le bouton "retour en haut"
         window.addEventListener('scroll', function() {
             const backToTopBtn = document.getElementById('backToTop');
