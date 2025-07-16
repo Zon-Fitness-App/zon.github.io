@@ -654,37 +654,42 @@
             }
 
             .nav-container {
-                grid-template-columns: 1fr;
-                gap: 15px;
-                padding: 10px;
+                grid-template-columns: 1fr auto 1fr;
+                gap: 10px;
+                padding: 15px 10px;
+                align-items: center;
             }
 
             .logo {
-                order: 1;
-                margin-bottom: 10px;
-                width: 70px;
+                width: 50px;
+                order: unset;
+                margin-bottom: 0;
             }
 
             nav:first-child {
-                order: 2;
-                justify-self: center;
+                order: unset;
+                justify-self: start;
             }
 
             nav:last-child {
-                order: 3;
-                justify-self: center;
+                order: unset;
+                justify-self: end;
             }
 
             nav ul {
-                gap: 8px;
-                flex-wrap: wrap;
-                justify-content: center;
+                gap: 6px;
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+            }
+
+            nav:last-child ul {
+                justify-content: flex-end;
             }
 
             nav a {
-                padding: 6px 12px;
-                font-size: 0.8em;
-                min-width: 80px;
+                padding: 6px 10px;
+                font-size: 0.7em;
+                min-width: auto;
                 text-align: center;
             }
 
@@ -790,21 +795,20 @@
             }
 
             .nav-container {
-                padding: 15px 10px;
+                padding: 12px 8px;
+                gap: 8px;
             }
 
             .logo {
-                width: 60px;
-                margin-bottom: 15px;
+                width: 45px;
             }
 
             nav ul {
-                gap: 6px;
+                gap: 4px;
             }
 
             nav a {
-                padding: 8px 10px;
-                font-size: 0.75em;
-                min-width: 70px;
+                padding: 5px 8px;
+                font-size: 0.65em;
             }
         }
