@@ -57,18 +57,24 @@
         }
 
         nav a {
-            outline: 2px solid #d5181d;
-            background-color: rgba(213, 24, 29, 0.3);
+            background: linear-gradient(45deg, #d5181d, #ff4757);
             color: white;
             text-decoration: none;
-            padding: 3px 8px; /* Reduced from 5px 10px */
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-            font-size: 0.95em; /* Optional: slightly smaller font */
+            padding: 8px 16px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-size: 0.9em;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+            box-shadow: 0 4px 15px rgba(213, 24, 29, 0.3);
         }
 
         nav a:hover {
-            background-color: #333;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(213, 24, 29, 0.4);
+            background: linear-gradient(45deg, #ff4757, #d5181d);
         }
 
         /* Section Hero */
