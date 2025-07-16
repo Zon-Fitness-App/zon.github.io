@@ -25,20 +25,17 @@
         }
 
         .nav-container {
-            display: flex;
-            justify-content: space-between;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
             align-items: center;
             max-width: 1200px;
             margin: 0 auto;
-            position: relative;
+            gap: 20px;
         }
 
         .logo {
             width: 90px;
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 10;
+            justify-self: center;
         }
 
         nav {
@@ -47,11 +44,11 @@
         }
 
         nav:first-child {
-            justify-content: flex-start;
+            justify-self: start;
         }
 
         nav:last-child {
-            justify-content: flex-end;
+            justify-self: end;
         }
 
         nav ul {
