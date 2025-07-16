@@ -62,21 +62,33 @@
                 <div class="feature-icon"><i class="fas fa-trophy"></i></div>
                 <h3>Gamified Challenges</h3>
                 <p>Challenge your friends in daily competitions, earn points and level up to unlock exclusive content</p>
+                <div class="feature-screenshot">
+                    <img src="images/zonappchallengeview.jpeg" alt="ZON App Challenge Creation - Choose challenge type: strength, endurance, repetitions, distance, time or custom" loading="lazy">
+                </div>
             </div>
             <div class="card feature-card">
                 <div class="feature-icon"><i class="fas fa-share-alt"></i></div>
                 <h3>Create & Share</h3>
                 <p>Create your own workout programs and share them with the community. Sell your creations or keep them private</p>
+                <div class="feature-screenshot">
+                    <img src="images/zonappprogrammeview.jpeg" alt="ZON App Programs View - Create and manage personalized workout programs" loading="lazy">
+                </div>
             </div>
             <div class="card feature-card">
                 <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
                 <h3>Advanced Tracking</h3>
                 <p>Track your progress with detailed metrics: workouts, calories, total time and achieved goals</p>
+                <div class="feature-screenshot">
+                    <img src="images/zonappprofileview.jpeg" alt="ZON App Profile View - User statistics, XP progression and Diamond level badge" loading="lazy">
+                </div>
             </div>
             <div class="card feature-card">
                 <div class="feature-icon"><i class="fas fa-users"></i></div>
                 <h3>Active Community</h3>
                 <p>Connect with other fitness enthusiasts, share your successes and motivate each other in your fitness journey</p>
+                <div class="feature-screenshot">
+                    <img src="images/zonappmessageview.jpeg" alt="ZON App Messages - Chat with friends, search conversations and online status indicators" loading="lazy">
+                </div>
             </div>
         </div>
     </section>
@@ -84,25 +96,22 @@
     <!-- Section captures d'écran modifiée -->
     <section id="screenshots" class="screenshots-wrapper">
         <h2>Discover ZON App in images</h2>
-        <div class="screenshot-container-wrapper">
-            <button id="scrollLeft" class="screenshot-nav-btn screenshot-nav-btn-left">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-            
-            <div class="screenshot-container" id="screenshotContainer">
-                <!-- Nouvelles captures d'écran -->
+        <div class="screenshots-grid">
+            <div class="screenshot-item">
+                <h3>Home Dashboard</h3>
+                <p>Your daily fitness overview with challenges, training schedule and activity metrics</p>
                 <img src="images/zonapphomeview.jpeg" alt="ZON App Home Dashboard - Today's challenges, training schedule and activity metrics" loading="lazy">
-                <img src="images/zonappworkoutview.jpeg" alt="ZON App Workout View - My workouts with strength, cardio and flexibility programs" loading="lazy">
-                <img src="images/zonappprogrammeview.jpeg" alt="ZON App Programs View - Create and manage personalized workout programs" loading="lazy">
-                <img src="images/zonappchallengeview.jpeg" alt="ZON App Challenge Creation - Choose challenge type: strength, endurance, repetitions, distance, time or custom" loading="lazy">
-                <img src="images/zonappprofileview.jpeg" alt="ZON App Profile View - User statistics, XP progression and Diamond level badge" loading="lazy">
-                <img src="images/zonappnotificationview.jpeg" alt="ZON App Notifications - Test messages and system notifications with chat bubble icons" loading="lazy">
-                <img src="images/zonappmessageview.jpeg" alt="ZON App Messages - Chat with friends, search conversations and online status indicators" loading="lazy">
             </div>
-            
-            <button id="scrollRight" class="screenshot-nav-btn screenshot-nav-btn-right">
-                <i class="fas fa-chevron-right"></i>
-            </button>
+            <div class="screenshot-item">
+                <h3>Workout Management</h3>
+                <p>Organize and track your workouts with strength, cardio and flexibility programs</p>
+                <img src="images/zonappworkoutview.jpeg" alt="ZON App Workout View - My workouts with strength, cardio and flexibility programs" loading="lazy">
+            </div>
+            <div class="screenshot-item">
+                <h3>Smart Notifications</h3>
+                <p>Stay connected with real-time updates and important fitness reminders</p>
+                <img src="images/zonappnotificationview.jpeg" alt="ZON App Notifications - Test messages and system notifications with chat bubble icons" loading="lazy">
+            </div>
         </div>
     </section>
 
@@ -219,50 +228,7 @@
             });
         });
 
-        // Script pour le carrousel
-        document.addEventListener('DOMContentLoaded', function() {
-            const container = document.getElementById('screenshotContainer');
-            const scrollLeftBtn = document.getElementById('scrollLeft');
-            const scrollRightBtn = document.getElementById('scrollRight');
-            
-            // Définir la distance de défilement (approximativement la largeur d'une image + gap)
-            const scrollDistance = 265; // 250px (largeur d'image) + 15px (gap)
-            
-            if (scrollLeftBtn && scrollRightBtn) {
-                scrollLeftBtn.addEventListener('click', function() {
-                    container.scrollBy({ left: -scrollDistance, behavior: 'smooth' });
-                });
-                
-                scrollRightBtn.addEventListener('click', function() {
-                    container.scrollBy({ left: scrollDistance, behavior: 'smooth' });
-                });
-            }
-            
-            // Faire défiler automatiquement
-            let autoScroll = setInterval(() => {
-                // Si on est à la fin, retourner au début
-                if (container.scrollLeft + container.clientWidth >= container.scrollWidth) {
-                    container.scrollTo({ left: 0, behavior: 'smooth' });
-                } else {
-                    container.scrollBy({ left: scrollDistance, behavior: 'smooth' });
-                }
-            }, 4000);
-            
-            // Arrêter le défilement automatique lorsque l'utilisateur interagit
-            container.addEventListener('mouseenter', () => {
-                clearInterval(autoScroll);
-            });
-            
-            container.addEventListener('mouseleave', () => {
-                autoScroll = setInterval(() => {
-                    if (container.scrollLeft + container.clientWidth >= container.scrollWidth) {
-                        container.scrollTo({ left: 0, behavior: 'smooth' });
-                    } else {
-                        container.scrollBy({ left: scrollDistance, behavior: 'smooth' });
-                    }
-                }, 5000);
-            });
-        });
+
     </script>
 </body>
 </html>
