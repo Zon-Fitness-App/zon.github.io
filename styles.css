@@ -612,11 +612,35 @@
             nav ul {
                 gap: 10px;
             }
+
+            .screenshots-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
         }
 
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 2.5em;
+                font-size: 2.2em;
+                line-height: 1.1;
+            }
+
+            .hero p {
+                font-size: 1.1em;
+                padding: 0 20px;
+            }
+
+            .hero-stats {
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+
+            .stat-number {
+                font-size: 1.8em;
+            }
+
+            .stat-label {
+                font-size: 0.8em;
             }
 
             .screenshot-container img {
@@ -624,29 +648,95 @@
             }
 
             .nav-container {
-                flex-direction: column;
+                grid-template-columns: 1fr;
                 gap: 15px;
+                padding: 10px;
+            }
+
+            .logo {
+                order: 1;
+                margin-bottom: 10px;
+            }
+
+            nav:first-child {
+                order: 2;
+                justify-self: center;
+            }
+
+            nav:last-child {
+                order: 3;
+                justify-self: center;
             }
 
             nav ul {
                 gap: 8px;
+                flex-wrap: wrap;
+                justify-content: center;
             }
 
-            .hero-stats {
-                gap: 30px;
-            }
-
-            .stat-number {
-                font-size: 2em;
+            nav a {
+                padding: 6px 12px;
+                font-size: 0.8em;
             }
 
             .benefits-grid {
                 flex-direction: column;
                 align-items: center;
+                gap: 15px;
+            }
+
+            .benefit {
+                padding: 12px 20px;
+                font-size: 0.8em;
+            }
+
+            .screenshots-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .screenshot-item {
+                padding: 20px;
+            }
+
+            .screenshot-item h3 {
+                font-size: 1.3em;
+            }
+
+            .cards-container {
+                gap: 20px;
+            }
+
+            .card {
+                width: 100%;
+                max-width: 350px;
+                padding: 25px;
+            }
+
+            .feature-screenshot img {
+                max-width: 180px;
             }
         }
 
         @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8em;
+                padding: 0 15px;
+            }
+
+            .hero p {
+                font-size: 1em;
+                padding: 0 15px;
+            }
+
+            .hero-stats {
+                gap: 15px;
+            }
+
+            .stat-number {
+                font-size: 1.5em;
+            }
+
             .screenshot-container img {
                 width: 180px;
             }
@@ -654,13 +744,31 @@
             .card {
                 width: 100%;
                 max-width: 300px;
+                padding: 20px;
             }
 
-            .hero h1 {
-                font-size: 2em;
+            .hero {
+                padding: 60px 15px;
             }
 
-            .hero p {
-                font-size: 1.1em;
+            .cards-section {
+                padding: 60px 15px;
+            }
+
+            .screenshots-wrapper {
+                padding: 60px 15px;
+            }
+
+            .contact {
+                padding: 60px 15px;
+            }
+
+            .cta-button {
+                padding: 15px 30px;
+                font-size: 1em;
+            }
+
+            .contact-form {
+                padding: 0 15px;
             }
         }

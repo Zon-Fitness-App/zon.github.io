@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <header id="top">
+    <header>
         <div class="nav-container">
         <nav>
         <ul>
@@ -200,7 +200,7 @@
         </div>
     </footer>
 
-    <a href="#top" class="back-to-top" id="backToTop">
+    <a href="#" class="back-to-top" id="backToTop">
         <i class="fas fa-arrow-up"></i>
     </a>
 
@@ -225,6 +225,15 @@
                         behavior: 'smooth'
                     });
                 }
+            });
+        });
+
+        // Bouton retour en haut
+        document.getElementById('backToTop').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
             });
         });
 
