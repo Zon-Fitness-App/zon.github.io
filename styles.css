@@ -427,8 +427,6 @@
 
         .testimonial-card {
             text-align: left;
-            max-width: 700px;
-            margin: 0 auto;
         }
 
         .testimonial-rating {
@@ -457,52 +455,6 @@
             letter-spacing: 1px;
         }
 
-        /* Slider de témoignages */
-        .testimonial-slider {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .testimonial-track {
-            position: relative;
-        }
-
-        .testimonial-card {
-            opacity: 0;
-            transform: translateY(10px);
-            pointer-events: none;
-            transition: opacity 0.4s ease, transform 0.4s ease;
-        }
-
-        .testimonial-card.active {
-            opacity: 1;
-            transform: translateY(0);
-            pointer-events: auto;
-        }
-
-        .testimonial-dots {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 25px;
-        }
-
-        .testimonial-dots .dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            background: transparent;
-            padding: 0;
-            cursor: pointer;
-            transition: background 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
-        }
-
-        .testimonial-dots .dot.active {
-            background: #d5181d;
-            border-color: #d5181d;
-            transform: scale(1.2);
-        }
 
         /* Ajustez le titre centralisé pour la section */
         .screenshots-wrapper h2 {
