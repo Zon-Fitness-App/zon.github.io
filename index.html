@@ -47,6 +47,10 @@
                 <span class="stat-label">Programs Created</span>
             </div>
         </div>
+        <div class="hero-social-proof">
+            <span>Built for lifters who take progress seriously.</span>
+            <span class="hero-badge">Coming soon on App Store</span>
+        </div>
         <div class="download-buttons">
             <a href="#preregister" class="cta-button">
                 <i class="fas fa-rocket"></i>
@@ -136,39 +140,46 @@
     <!-- Section témoignages -->
     <section id="testimonials" class="cards-section">
         <h2>What our users say</h2>
-        <div class="cards-container">
-            <div class="card testimonial-card">
-                <div class="testimonial-rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
+        <div class="testimonial-slider">
+            <div class="testimonial-track">
+                <div class="card testimonial-card active">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"The daily challenges have completely transformed me! I've never been so motivated to work out. The competition with my friends adds so much fun!"</p>
+                    <div class="testimonial-name">Alex M. - Diamond Level</div>
                 </div>
-                <p>"The daily challenges have completely transformed me! I've never been so motivated to work out. The competition with my friends adds so much fun!"</p>
-                <div class="testimonial-name">Alex M. - Diamond Level</div>
+                <div class="card testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"I created my first program and sold it for $50! ZON allowed me to monetize my passion for fitness. The community is incredible!"</p>
+                    <div class="testimonial-name">Sarah L. - Program Creator</div>
+                </div>
+                <div class="card testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"The progress tracking is exceptional. I can see exactly where I am and the goals are clear. I lost 33 pounds in 6 months thanks to ZON!"</p>
+                    <div class="testimonial-name">Thomas R. - 13,320 ZP</div>
+                </div>
             </div>
-            <div class="card testimonial-card">
-                <div class="testimonial-rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <p>"I created my first program and sold it for $50! ZON allowed me to monetize my passion for fitness. The community is incredible!"</p>
-                <div class="testimonial-name">Sarah L. - Program Creator</div>
-            </div>
-            <div class="card testimonial-card">
-                <div class="testimonial-rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <p>"The progress tracking is exceptional. I can see exactly where I am and the goals are clear. I lost 33 pounds in 6 months thanks to ZON!"</p>
-                <div class="testimonial-name">Thomas R. - 13,320 ZP</div>
+            <div class="testimonial-dots" aria-label="Testimonials navigation">
+                <button class="dot active" data-index="0" aria-label="Show first testimonial"></button>
+                <button class="dot" data-index="1" aria-label="Show second testimonial"></button>
+                <button class="dot" data-index="2" aria-label="Show third testimonial"></button>
             </div>
         </div>
     </section>
@@ -200,10 +211,10 @@
             </div>
             <button type="submit" class="cta-button">
                 <i class="fas fa-rocket"></i>
-                JOIN THE WAITLIST
+                GET EARLY ACCESS
             </button>
         </form>
-        <p style="margin-top: 20px; font-size: 0.9em;">We respect your privacy and will never share your email.</p>
+        <p style="margin-top: 20px; font-size: 0.9em;">No spam, ever. We only email you about ZON App and you can unsubscribe in one click.</p>
     </section>
 
     <footer>
@@ -255,6 +266,46 @@
             });
         });
 
+        // Carrousel de témoignages
+        (function() {
+            const cards = document.querySelectorAll('.testimonial-card');
+            const dots = document.querySelectorAll('.testimonial-dots .dot');
+            if (!cards.length || !dots.length) return;
+
+            let current = 0;
+            let timer = null;
+
+            function showTestimonial(index) {
+                cards.forEach((card, i) => {
+                    card.classList.toggle('active', i === index);
+                });
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === index);
+                });
+                current = index;
+            }
+
+            function nextTestimonial() {
+                const next = (current + 1) % cards.length;
+                showTestimonial(next);
+            }
+
+            function startAutoPlay() {
+                if (timer) clearInterval(timer);
+                timer = setInterval(nextTestimonial, 7000);
+            }
+
+            dots.forEach(dot => {
+                dot.addEventListener('click', () => {
+                    const index = parseInt(dot.getAttribute('data-index'), 10);
+                    showTestimonial(index);
+                    startAutoPlay();
+                });
+            });
+
+            showTestimonial(0);
+            startAutoPlay();
+        })();
 
     </script>
 </body>
